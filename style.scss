@@ -1,0 +1,204 @@
+$orange: #fe7f00;
+$plum: #50344f;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #778899;
+    display: flex;
+    justify-content: center;
+}
+.start {
+    display: grid;
+    grid-template-columns: 400px;
+    grid-template-rows: 400px 100px 100px 100px;
+    .image {
+        grid-row: 1;
+        animation: changeimage 8s infinite;
+    
+    }
+}
+
+.selectcategories {
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    select {
+        width: 300px;
+        height: 80px;
+        border-radius: 30%;
+        outline: none;
+        background-color: $orange;
+        color: #50344f;
+        font-size: 20px;
+    }
+}
+
+.enterpassword {
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+        width: 300px;
+        height: 80px;
+        border-radius: 30%;
+        outline: none;
+        background-color: $orange;
+        color: #50344f;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+}
+
+.buttonstartgame {
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+        width: 300px;
+        height: 80px;
+        border-radius: 30%;
+        outline: none;
+        background-color: $orange;
+        color: #50344f;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    input:hover {
+        animation-name: inputhover;
+        animation-duration: 0.8s;
+    }
+}
+@keyframes inputhover {
+    0% {transform: rotate(0deg);};
+    20% {transform: rotate(10deg);};
+    40% {transform: rotate(-10deg);};
+    60% {transform: rotate(10deg);};
+    80% {transform: rotate(-10deg);};
+}
+
+@keyframes changeimage {
+    0% {background-image: url(img/wis1.png)};
+    15% {background-image: url(img/wis2.png)};
+    30% {background-image: url(img/wis3.png)};
+    45% {background-image: url(img/wis4.png)};
+    60% {background-image: url(img/wis5.png)};
+    75% {background-image: url(img/wis6.png)};
+    90% {background-image: url(img/wis7.png)};
+    100% {background-image: url(img/wis8.png)};
+}
+
+
+.ingame {
+    display: none;
+    grid-template-columns: 800px;
+    grid-template-rows: 400px 70px 150px 200px;
+    .image {
+        grid-row: 1;
+        display: flex;
+        justify-content: center;
+        .photo { 
+        background-image: url(img/wis1.png);
+        background-repeat: no-repeat;
+        width: 400px;
+        height: 400px;
+    }
+}
+}
+.category {
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;;
+    font-size: 30px;
+    font-weight: bold;
+    color: $plum;
+}
+.password-container {
+        grid-row: 3;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+       justify-content: center;
+}
+.password {
+    border-bottom: 1px solid $plum;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    font-size: 0px;
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color: $plum;
+}
+
+.keyboard {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: repeat(3, 65px);
+    margin-left: 10px;
+    input {
+        margin: 2px;
+        background-color: $orange;
+        color: $plum;
+        outline: none;
+        cursor: pointer;
+    }
+    input:hover {
+        margin: 2px;
+        background-color: $plum;
+        color: $orange;
+        cursor: pointer;
+    }
+    input:disabled {
+        opacity: 0;
+        cursor: default;
+    }
+}
+
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: $orange;
+    transform: translate(-50%,-50%);
+    display: none;
+    grid-template-columns: repeat(1, 400px);
+    grid-template-rows: 100px 50px 100px;
+    .header {
+        grid-column: 1/-1;
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+    }
+}
+.backtogame {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/-1;
+    grid-row: 3;
+    input {
+        border-radius: 15%;
+        outline: none;
+        background-color: $plum;
+        color: $orange;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+.info {
+    grid-column: 1/-1;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
